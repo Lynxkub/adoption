@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Adopt A Pet!{% endblock %}
+
+{% block content %}
+<h1>Our Pets</h1>
+
+{% for pet in pets %}
+    <span>
+        <div>
+        <img src={{pet.photo_url}}>
+        </div>
+        <p><a href = '/{{pet.id}}'>{{pet.name}}</a> the {{pet.species}} is {{pet.age}} years old and is currently {{pet.available}} for adoption</p>
+    </span>
+{% endfor %}
+
+<form>
+<button formaction = '/add' class = 'btn btn-info btn-sm'>Add A New Pet To Our List</button>
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{chosen_id.name}}{% endblock %}
+
+{% block content %}
+
+    <span>
+        <div>
+        <img src={{chosen_id.photo_url}}>
+        </div>
+        <p>{{chosen_id.name}} the {{chosen_id.species}} is {{chosen_idage}} years old and is currently {{chosen_id.available}} for adoption</p>
+        <p>
+          <h3>Notes:</h3> {{chosen_id.notes}}
+        </p>
+    </span>
+    <form action = '/pet/{{chosen_id.id}}/edit' method = 'POST'>
+        <button class='btn btn-sm btn-info'>Edit Pet</button>
+    </form>
+
+
+{% endblock %}
